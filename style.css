@@ -1,0 +1,13 @@
+#main-nav {
+    position: sticky;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    top: 0;
+}
+
+#main-nav .nav-item {
+    display: inline-block;
+    margin: 0px 30px;
+}
