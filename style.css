@@ -1,13 +1,37 @@
+@font-face {
+    font-family: Liebelei;
+    src: url(fonts/LiebeleiProUnicW00-Regular.woff);
+  }
+
+body{
+    font-family: 'Helvetica';
+}
+
+div.container {max-width:800px;margin: 0px auto;}
+
 #main-nav {
-    position: sticky;
+    /* position: sticky;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 60px;
-    top: 0;
+    top: 0; */
 }
 
 #main-nav .nav-item {
     display: inline-block;
     margin: 0px 30px;
 }
+
+#ideas-list ul li {
+display:flex;
+flex-direction: row;
+}
+
+#ideas-list ul li p {
+    word-wrap:anywhere;
+    }
+
+    #ideas-list ul li img {
+        height:fit-content;
+        }
