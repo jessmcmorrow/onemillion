@@ -3,11 +3,14 @@
     src: url(fonts/LiebeleiProUnicW00-Regular.woff);
   }
 
-body{
+body {
     font-family: 'Helvetica';
 }
 
-div.container {max-width:800px;margin: 0px auto;}
+div.container {
+    max-width:800px;
+    margin: 0px auto;
+}
 
 #main-nav {
     /* position: sticky;
@@ -23,15 +26,10 @@ div.container {max-width:800px;margin: 0px auto;}
     margin: 0px 30px;
 }
 
-#ideas-list ul li {
-display:flex;
-flex-direction: row;
+#ideas-list p {
+    word-wrap:anywhere;
 }
 
-#ideas-list ul li p {
-    word-wrap:anywhere;
-    }
-
-    #ideas-list ul li img {
-        height:fit-content;
-        }
+#ideas-list img {
+    height: fit-content;
+}
