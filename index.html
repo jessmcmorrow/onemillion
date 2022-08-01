@@ -28,10 +28,10 @@
     <br/>
             <img src='media/another-is.png' 
         alt="a hand written poem saying another is"/>
-    <div id="infinite-idea-top"><img src="media/binary/2.png"></div>
-    <div id="infinite-idea-bottom"><img src="media/binary/1.png"></div>
+    <!-- <div id="infinite-idea-top"><img src="media/binary/2.png"></div> -->
     </figure>
 
+    <div id="infinite-idea-bottom"><img src="media/binary/1.png"></div>
     <section id="records">
         <div>
         <a href="tarantula--poesie-culture/">
@@ -41,6 +41,8 @@
     </div>
     </section>
 
+   
+
 </div>
 <div style="display:none">
     <img src="media/binary/1.png"/>
@@ -49,9 +51,11 @@
     <img src="media/binary/4.png"/>
     <img src="media/binary/5.png"/>
     <img src="media/binary/6.png"/>
-    </div>
+</div>
 
     <script>
+
+const rgba2hex = (rgba) => `#${rgba.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d+\.{0,1}\d*))?\)$/).slice(1).map((n, i) => (i === 3 ? Math.round(parseFloat(n) * 255) : parseFloat(n)).toString(16).padStart(2, '0').replace('NaN', '')).join('')}`
 
 var binaryGenerateInterval = setInterval(function(){
     binaryGenerate()
@@ -66,12 +70,20 @@ var existingImgs = [].slice.call(document.getElementById('infinite-idea-bottom')
 var randomImgIndex = Math.floor(existingImgs.length * Math.random());
 document.getElementById('infinite-idea-bottom').insertBefore(newImg,existingImgs[randomImgIndex])
 
-if(document.getElementById('infinite-idea-bottom').getBoundingClientRect().bottom >window.innerHeight){
+//if(document.getElementById('infinite-idea-bottom').getBoundingClientRect().bottom >window.innerHeight){
+  if(Math.random()*25 > 24 && (existingImgs.length+1)%17==0){
     clearInterval(binaryGenerateInterval);
-    setInterval(function(){
+  var binaryColorsInterval = setInterval(function(){
         binaryColors();
     },0.1)
+
+    setTimeout(function(){
+        clearInterval(binaryColorsInterval);
+    },10000)
 }
+
+document.getElementById("ideas-list").style.filter = `drop-shadow(${Math.round(Math.random()*30)}px ${Math.round(Math.random()*10)}px ${Math.round(Math.random()*4)}px ${rgba2hex(randomColour())})`
+
 
 }
 
@@ -79,14 +91,25 @@ function binaryColors(){
     var existingImgs = [].slice.call(document.getElementById('infinite-idea-bottom').getElementsByTagName('img'));
 var randomImgIndex = Math.floor(existingImgs.length * Math.random());
 existingImgs[randomImgIndex].style.backgroundColor = `${randomColour()}`;
+
+existingImgs.forEach((x,i)=>{
+    if(((i+1)%17==0)){
+        x.style.backgroundColor = 'white';
+    }
+})
+
 }
 
 function randomColour(){
-    var r = Math.random() * 255;
-    var g = Math.random() * 255;
-    var b = Math.random() * 255;
-    return "rgba(" + r + "," + g + "," + b + ",0.5)";
+    var r = Math.round(Math.random() * 255);
+    var g = Math.round(Math.random() * 255);
+    var b = Math.round(Math.random() * 255);
+    var rgba = "rgba(" + r + "," + g + "," + b + ",0.5)";
+
+    return rgba;
 }
+
+
     </script>
 
 </body>
