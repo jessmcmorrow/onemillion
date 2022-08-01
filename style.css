@@ -39,8 +39,9 @@ img {max-width:100%;}
 }
 
 #main-nav .nav-item a{
-    text-transform: uppercase;
+    text-transform: lowercase;
     font-weight:bolder;
+    font-style:italic;
     color: black;
     text-decoration:none;
 }
@@ -54,11 +55,11 @@ img {max-width:100%;}
     left: 0px;
     z-index:-10
 }
-#infinite-idea img{
-    height:10px;
+#infinite-idea-bottom img{
+    height:15px;
     margin:1px;
 }
-#infinite-idea img:hover{
+#infinite-idea-bottom img:hover{
     filter:hue-rotate(90deg);
 }
 
@@ -94,7 +95,9 @@ margin:5px;
 }
 
 
-.wrapper div {display:inline-block}
+.wrapper div {
+    display:inline-block
+}
 
 div.fader {
     position:relative;
@@ -109,15 +112,17 @@ div.fader div:first-child {
     position:absolute;
     top:0;
     margin-left: auto;
-margin-right: auto;
-left: 0;
-right: 0;
-text-align: center;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
     animation: fade 15s infinite;
     z-index:10;
 }
 
-div.fader img {width:100%;}
+div.fader img {
+    width:100%;
+}
 
 
 @keyframes fade {

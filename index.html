@@ -27,8 +27,8 @@
     <br/>
             <img src='media/another-is.png' 
         alt="a hand written poem saying another is"/>
-   
-    <div id="infinite-idea"><img src="media/binary/1.png"></div>
+    <div id="infinite-idea-top"><img src="media/binary/2.png"></div>
+    <div id="infinite-idea-bottom"><img src="media/binary/1.png"></div>
     </figure>
 
     <section id="records">
@@ -61,11 +61,11 @@ var newImg = document.createElement('img');
 newImg.style.backgroundColor = `${randomColour()}`;
 newImg.src = "media/binary/" + Math.ceil(6 * Math.random()) + ".png";
 
-var existingImgs = [].slice.call(document.getElementById('infinite-idea').getElementsByTagName('img'));
+var existingImgs = [].slice.call(document.getElementById('infinite-idea-bottom').getElementsByTagName('img'));
 var randomImgIndex = Math.floor(existingImgs.length * Math.random());
-document.getElementById('infinite-idea').insertBefore(newImg,existingImgs[randomImgIndex])
+document.getElementById('infinite-idea-bottom').insertBefore(newImg,existingImgs[randomImgIndex])
 
-if(document.getElementById('infinite-idea').getBoundingClientRect().top <0){
+if(document.getElementById('infinite-idea-bottom').getBoundingClientRect().bottom >window.innerHeight){
     clearInterval(binaryGenerateInterval);
     setInterval(function(){
         binaryColors();
@@ -75,7 +75,7 @@ if(document.getElementById('infinite-idea').getBoundingClientRect().top <0){
 }
 
 function binaryColors(){
-    var existingImgs = [].slice.call(document.getElementById('infinite-idea').getElementsByTagName('img'));
+    var existingImgs = [].slice.call(document.getElementById('infinite-idea-bottom').getElementsByTagName('img'));
 var randomImgIndex = Math.floor(existingImgs.length * Math.random());
 existingImgs[randomImgIndex].style.backgroundColor = `${randomColour()}`;
 }
@@ -84,7 +84,7 @@ function randomColour(){
     var r = Math.random() * 255;
     var g = Math.random() * 255;
     var b = Math.random() * 255;
-    return "rgba(" + r + "," + g + "," + b + ",0.4)";
+    return "rgba(" + r + "," + g + "," + b + ",0.5)";
 }
     </script>
 
