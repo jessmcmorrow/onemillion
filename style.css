@@ -22,6 +22,7 @@ div.container {
     left:0px;
     background:rgba(255,255,255,0.9);
     width:100%;
+    z-index: 10;
 }
 
 #main-nav .nav-item {
@@ -38,6 +39,8 @@ div.container {
 #ideas-list img {
     height: fit-content;
 }
+
+#infinite-idea{position:fixed;bottom:0px;left: 0px;}
 
 .wrapper {
     /* display: grid;

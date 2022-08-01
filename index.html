@@ -39,7 +39,7 @@
 setInterval(function(){
     document.getElementById('infinite-idea').innerHTML = document.getElementById('infinite-idea').innerHTML 
     + `<span style='color:${randomColour()}'>${(Math.random()>0.5?1:0)}</span>`;
-},100)
+},10)
 
 function randomColour(){
     var r = Math.random() * 255;
