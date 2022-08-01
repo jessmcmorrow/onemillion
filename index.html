@@ -11,13 +11,14 @@
 
 </head>
 <body>
-    <div class="">
     <nav aria-labelledby='mainmenulabel' id='main-nav'>
         <ul>
-            <li class="nav-item"><a href="releases.html">Releases</a></li>
+            <li class="nav-item"><a href="index.html">Releases</a></li>
             <li class="nav-item"><a href="about.html">About</a></li>
         </ul>
     </nav>
+    <div class="container">
+
 
     <figure id="ideas-list">
         <img src='media/i-have-more-than-a-million-thoughts-way-more.png' 
@@ -29,15 +30,23 @@
     
             <img src='media/another-is.png' 
         alt="a hand written poem saying another is" style='float:left'/>
-        <p id="infinite-idea"></p>
+        <p id="infinite-idea">00001101010010101</p>
         <!-- <p id="infinite-idea">00001101010010101</p> -->
     </div>
     </figure>
 </div>
     <script>
 setInterval(function(){
-    document.getElementById('infinite-idea').innerHTML = document.getElementById('infinite-idea').innerHTML + (Math.random()>0.5?1:0)
-},3000)
+    document.getElementById('infinite-idea').innerHTML = document.getElementById('infinite-idea').innerHTML 
+    + `<span style='color:${randomColour()}'>${(Math.random()>0.5?1:0)}</span>`;
+},200)
+
+function randomColour(){
+    var r = Math.random() * 255;
+    var g = Math.random() * 255;
+    var b = Math.random() * 255;
+    return "rgb(" + r + "," + g + "," + b + ")";
+}
     </script>
 
 </body>
