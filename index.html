@@ -38,16 +38,28 @@
         <h5>Tarantula - Poesie Culture</h5>
     </div>
     </section>
-    <p id="infinite-idea">00001101010010101</p>
+    <p id="infinite-idea">000011010<span>1</span>0010101</p>
 
     </figure>
 </div>
     <script>
+
 setInterval(function(){
-    document.getElementById('infinite-idea').innerHTML = 
-    `<span style='color:${randomColour()}'>${(Math.random()>0.5?1:0)}</span>`
-    + document.getElementById('infinite-idea').innerHTML;
+    updateBinaryBG()
 },10)
+
+function updateBinaryBG(){
+
+
+var newSpan = document.createElement('span');
+newSpan.style.color = `${randomColour()}`;
+newSpan.innerHTML = (Math.random()>0.5?1:0)
+
+var existingSpans = [].slice.call(document.getElementById('infinite-idea').getElementsByTagName('span'));
+var randomSpanIndex = Math.round(existingSpans.length * Math.random());
+document.getElementById('infinite-idea').insertBefore(newSpan,existingSpans[randomSpanIndex])
+
+}
 
 function randomColour(){
     var r = Math.random() * 255;
