@@ -13,9 +13,8 @@
 <body>
     <nav aria-labelledby='mainmenulabel' id='main-nav'>
         <ul>
-            <li class="nav-item">a million thoughts</li>
-            <li class="nav-item"><a href="index.html">Releases</a></li>
-            <li class="nav-item"><a href="about.html">About</a></li>
+            <li class="nav-item active"><a href="index.html">a million thoughts</a></li>
+            <li class="nav-item"><a href="info.html">info</a></li>
         </ul>
     </nav>
     <div class="container">
@@ -33,15 +32,29 @@
 
     <div id="infinite-idea-bottom"><img src="media/binary/1.png"></div>
     <section id="records">
+        <!-- <h1>records</h1> -->
         <div>
         <a href="tarantula--poesie-culture/">
-            <img src="tarantula--poesie-culture/tarantula-poesieCulture-cover.jpg">
+            <img src="tarantula--poesie-culture/tarantula-poesieCulture-coverGrab.jpg">
         <h5>Tarantula - Poesie Culture</h5>
     </a>
     </div>
     </section>
 
-   
+    <div class="fader">
+        <div>
+            <a href="https://www.youtube.com/watch?v=fyRn4KbVIHk" target="_blank">
+                <img src='media/wizard.jpg'
+                     alt="jamie is standing" />
+            </a>
+        </div>
+        <div>
+            <a href="https://www.youtube.com/watch?v=fyRn4KbVIHk" target="_blank">
+                <img src='media/wizard2.jpg'
+                     alt="jamie has disappeared and all that is left are his shoes" />
+            </a>
+        </div>
+    </div>
 
 </div>
 <div style="display:none">
@@ -60,6 +73,10 @@ const rgba2hex = (rgba) => `#${rgba.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s
 var binaryGenerateInterval = setInterval(function(){
     binaryGenerate()
 },0.1)
+
+window.onload = ()=>{
+    document.getElementById("ideas-list").style.filter = `drop-shadow(${Math.round(Math.random()*30)}px ${Math.round(Math.random()*10)}px ${Math.round(Math.random()*4)}px ${rgba2hex(randomColour())})`
+}
 
 function binaryGenerate(){
 var newImg = document.createElement('img');
@@ -82,14 +99,16 @@ document.getElementById('infinite-idea-bottom').insertBefore(newImg,existingImgs
     },10000)
 }
 
-document.getElementById("ideas-list").style.filter = `drop-shadow(${Math.round(Math.random()*30)}px ${Math.round(Math.random()*10)}px ${Math.round(Math.random()*4)}px ${rgba2hex(randomColour())})`
 
 
 }
 
 function binaryColors(){
-    var existingImgs = [].slice.call(document.getElementById('infinite-idea-bottom').getElementsByTagName('img'));
+
+var existingImgs = [].slice.call(document.getElementById('infinite-idea-bottom').getElementsByTagName('img'));
+
 var randomImgIndex = Math.floor(existingImgs.length * Math.random());
+
 existingImgs[randomImgIndex].style.backgroundColor = `${randomColour()}`;
 
 existingImgs.forEach((x,i)=>{
