@@ -139,6 +139,20 @@ div.fader img {
     filter: drop-shadow(30px 10px 4px #4444dd);
 } */
 
+div#background-fader div{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:-10;
+    background-size:cover;
+}
+
+div#background-fader div:last-child{
+    animation: fade 15s infinite;
+}
+
 
 @keyframes fade {
     0%,100% { opacity: 0 }
