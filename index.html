@@ -30,15 +30,23 @@
     
             <img src='media/another-is.png' 
         alt="a hand written poem saying another is" style='float:left'/>
-        <p id="infinite-idea">00001101010010101</p>
         <!-- <p id="infinite-idea">00001101010010101</p> -->
     </div>
+
+    <section id="records">
+        <div><img src="tarantula-posieCulture/tarantula-poesieCulture-cover.jpg">
+        <h5>Tarantula - Poesie Culture</h5>
+    </div>
+    </section>
+    <p id="infinite-idea">00001101010010101</p>
+
     </figure>
 </div>
     <script>
 setInterval(function(){
-    document.getElementById('infinite-idea').innerHTML = document.getElementById('infinite-idea').innerHTML 
-    + `<span style='color:${randomColour()}'>${(Math.random()>0.5?1:0)}</span>`;
+    document.getElementById('infinite-idea').innerHTML = 
+    `<span style='color:${randomColour()}'>${(Math.random()>0.5?1:0)}</span>`
+    + document.getElementById('infinite-idea').innerHTML;
 },10)
 
 function randomColour(){

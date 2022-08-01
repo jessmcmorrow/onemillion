@@ -40,7 +40,24 @@ div.container {
     height: fit-content;
 }
 
-#infinite-idea{position:fixed;bottom:0px;left: 0px;}
+#infinite-idea{position:fixed;bottom:0px;left: 0px;z-index:-10}
+
+section#records {
+margin-top:5px;
+display: flex;
+flex-flow: row wrap;
+justify-content: space-around;
+overflow-x: hidden;
+margin-bottom: 30px;
+}
+
+section#records div {
+    width:200px;
+}
+
+section#records div img {
+    width:100%;
+}
 
 .wrapper {
     /* display: grid;
