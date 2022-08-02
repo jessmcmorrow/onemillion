@@ -93,7 +93,7 @@ section#records div {
     padding: 5px;
     filter: saturate(5);
     border: 1px dotted black;
-    transition: filter 2s;
+    transition: all 0.5s;
 }
 
 section#records div img {
@@ -101,7 +101,8 @@ section#records div img {
 }
 
 section#records div:hover {
-    filter: saturate(100);
+    filter: saturate(0);
+    padding:0px;
 }
 
 section#records div h5 {
@@ -194,9 +195,10 @@ div#background-fader div:last-child{
     background:yellow;
     width: fit-content;
     margin: 0px auto;
+    padding:5px;
 }
 
-#tracks li:hover, audio{
+#tracks li:hover, #tracks li.active, audio{
     filter:invert(1);
 }
 

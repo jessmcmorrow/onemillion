@@ -96,6 +96,8 @@
         function initModal(){
         [].slice.call(document.querySelectorAll('#tracks li')).forEach((x,i,arr)=>{
             x.onclick = ()=>{
+                arr.forEach((li)=>li.className='');
+                x.className = 'active';
                 document.getElementById('audio-player').src = x.dataset.track;
                 document.getElementById('audio-player').play();
                 document.getElementById('audio-player').style.opacity = 1;
