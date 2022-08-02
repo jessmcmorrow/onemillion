@@ -179,6 +179,20 @@ div#background-fader div:last-child{
     background: white;
 }
 
+#tracks ul{
+    padding:0px;
+    margin:0px;
+}
+
+#tracks li{
+    cursor: pointer;
+    list-style-type:none;
+}
+
+div#tracks {
+    margin-bottom:20px;
+}
+
 @keyframes fade {
     0%,100% { opacity: 0 }
     50% { opacity: 1 }
