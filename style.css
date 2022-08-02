@@ -191,6 +191,13 @@ div#background-fader div:last-child{
 #tracks li{
     cursor: pointer;
     list-style-type:none;
+    background:yellow;
+    width: fit-content;
+    margin: 0px auto;
+}
+
+#tracks li:hover, audio{
+    filter:invert(1);
 }
 
 div#tracks {

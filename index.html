@@ -80,7 +80,7 @@
             x.onclick = (e) => {
                 e.preventDefault();
                 
-                fetch(x.href)
+                fetch(x.href + "?" + Math.random())
                 .then((response) => response.text())
                 .then((data)=>{
                     document.getElementById('record-modal-inner').innerHTML=data; 
