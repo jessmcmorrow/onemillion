@@ -73,6 +73,10 @@ img {max-width:100%;}
     filter:hue-rotate(90deg);
 }
 
+#infinite-idea-bottom{
+    margin-bottom:20px;
+}
+
 section#records {
 margin-top:25px;
 display: flex;
@@ -153,6 +157,27 @@ div#background-fader div:last-child{
     animation: fade 15s infinite;
 }
 
+
+#record-modal {
+    position: fixed;
+    top: 0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    background:white;
+    text-align: center;
+    z-index:100;
+    overflow-y: scroll;
+}
+
+#close-record-modal{
+    position: fixed;
+    right:0;
+    top:0;
+    padding:20px;
+    cursor: pointer;
+    background: white;
+}
 
 @keyframes fade {
     0%,100% { opacity: 0 }

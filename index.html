@@ -22,7 +22,6 @@
     </nav>
     <div class="container">
 
-
     <figure id="ideas-list">
         <img src='media/amillionthoughts-oneis.png' 
         alt="a hand written poem saying i have more than a million thoughts, one is 01101100001010101"/>
@@ -34,6 +33,18 @@
     </figure>
 
     <div id="infinite-idea-bottom"><img src="media/binary/1.png"></div>
+    
+    <div class="fader">
+        <div>
+                <img src='media/wizard.jpg'
+                     alt="jamie is standing" />
+        </div>
+        <div>
+                <img src='media/wizard2.jpg'
+                     alt="jamie has disappeared and all that is left are his shoes" />
+        </div>
+    </div>
+    
     <section id="records">
         <!-- <h1>records</h1> -->
         <div>
@@ -45,20 +56,16 @@
     </section>
 
 </div>
-<div class="fader">
-    <div>
-        <a href="https://www.youtube.com/watch?v=fyRn4KbVIHk" target="_blank">
-            <img src='media/wizard.jpg'
-                 alt="jamie is standing" />
-        </a>
-    </div>
-    <div>
-        <a href="https://www.youtube.com/watch?v=fyRn4KbVIHk" target="_blank">
-            <img src='media/wizard2.jpg'
-                 alt="jamie has disappeared and all that is left are his shoes" />
-        </a>
+
+
+
+<div id="record-modal" style="display:none">
+    <div id="close-record-modal">close X</div>
+    <div id="record-modal-inner">
+        nothing to see
     </div>
 </div>
+
 <div style="display:none">
     <img src="media/binary/1.png"/>
     <img src="media/binary/2.png"/>
@@ -69,6 +76,19 @@
 </div>
 
     <script>
+
+        [].slice.call(document.getElementById('records').getElementsByTagName('a'))
+        .forEach(x=>{
+            x.onclick = (e) => {
+                e.preventDefault();
+                
+                fetch(x.href)
+                .then((response) => response.text())
+                .then((data)=>{document.getElementById('record-modal-inner').innerHTML=data; document.getElementById('record-modal').style.display = 'block';document.body.style.overflowY='hidden'})
+            }
+        })
+
+        document.getElementById('close-record-modal').onclick = ()=>{document.getElementById('record-modal').style.display = 'none';document.body.style.overflowY='scroll'}
 
 const rgba2hex = (rgba) => `#${rgba.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d+\.{0,1}\d*))?\)$/).slice(1).map((n, i) => (i === 3 ? Math.round(parseFloat(n) * 255) : parseFloat(n)).toString(16).padStart(2, '0').replace('NaN', '')).join('')}`
 
@@ -89,7 +109,6 @@ var existingImgs = [].slice.call(document.getElementById('infinite-idea-bottom')
 var randomImgIndex = Math.floor(existingImgs.length * Math.random());
 document.getElementById('infinite-idea-bottom').insertBefore(newImg,existingImgs[randomImgIndex])
 
-//if(document.getElementById('infinite-idea-bottom').getBoundingClientRect().bottom >window.innerHeight){
   if(Math.random()*25 > 24 && (existingImgs.length+1)%17==0){
     clearInterval(binaryGenerateInterval);
   var binaryColorsInterval = setInterval(function(){
