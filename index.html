@@ -98,6 +98,7 @@
             x.onclick = ()=>{
                 document.getElementById('audio-player').src = x.dataset.track;
                 document.getElementById('audio-player').play();
+                document.getElementById('audio-player').style.opacity = 1;
                 document.getElementById('audio-player').onended = ()=>{
                     if(i!=arr.length-1){
                         document.getElementById('audio-player').src = [].slice.call(document.querySelectorAll('#tracks li'))[i+1].dataset.track;
