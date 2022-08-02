@@ -91,7 +91,7 @@ section#records div {
     background: rgba(255,255,255,0.9);
     text-align: center;
     padding: 5px;
-    filter: saturate(5);
+    filter: saturate(0);
     border: 1px dotted black;
     transition: all 0.5s;
 }
@@ -101,7 +101,7 @@ section#records div img {
 }
 
 section#records div:hover {
-    filter: saturate(0);
+    filter: saturate(5);
     padding:0px;
 }
 
