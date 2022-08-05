@@ -103,8 +103,8 @@
                 document.getElementById('audio-player').style.opacity = 1;
                 document.getElementById('audio-player').onended = ()=>{
                     if(i!=arr.length-1){
-                        document.getElementById('audio-player').src = [].slice.call(document.querySelectorAll('#tracks li'))[i+1].dataset.track;
-                        document.getElementById('audio-player').play();
+                        arr[i+1].click();
+                      //  document.getElementById('audio-player').play();
                     }
                 }
             }
@@ -116,6 +116,10 @@ const rgba2hex = (rgba) => `#${rgba.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s
 var binaryGenerateInterval = setInterval(function(){
     binaryGenerate()
 },0.1)
+
+document.getElementById('infinite-idea-bottom').onclick = ()=>{
+    binaryGenerate();
+}
 
 window.onload = ()=>{
     document.getElementById("ideas-list").style.filter = `drop-shadow(${Math.round(Math.random()*30)}px ${Math.round(Math.random()*10)}px ${Math.round(Math.random()*4)}px ${rgba2hex(randomColour())})`
@@ -144,6 +148,8 @@ document.getElementById('infinite-idea-bottom').insertBefore(newImg,existingImgs
 
 
 }
+
+
 
 function binaryColors(){
 
