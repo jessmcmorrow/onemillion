@@ -45,7 +45,7 @@ img {
 
 #main-nav .nav-item:not(.active){
     border:1px dotted black;
-
+    cursor:pointer;
 }
 
 #main-nav .nav-item.active a{
@@ -88,25 +88,34 @@ flex-flow: row wrap;
 justify-content: space-around;
 overflow-x: hidden;
 margin-bottom: 30px;
+transition: max-height 1s;
+overflow:hidden;
 }
 
 section#records div {
-    width:300px;
+    width:100%;
     background: rgba(255,255,255,0.9);
     text-align: center;
     padding: 5px;
-    filter: saturate(0);
-    border: 1px dotted black;
+    filter: saturate(1);
+    border-color: black;
+    border-style: dotted;
+    border-width: 1px;
+    background-color: #d2ffd0;
     transition: all 0.5s;
 }
 
+section#records div a {
+    text-decoration:none;
+    color: blue;
+}
+
 section#records div img {
-    width:100%;
+    width:200px;
 }
 
 section#records div:hover {
-    filter: saturate(5);
-    padding:0px;
+    filter: saturate(2);
 }
 
 section#records div h5 {

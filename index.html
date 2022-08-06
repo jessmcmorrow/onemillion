@@ -15,10 +15,24 @@
     <nav aria-labelledby='mainmenulabel' id='main-nav'>
         <ul>
             <li class="nav-item active"><a href="index.html">a million thoughts</a></li>
+            <li class="nav-item" id="toggle-records">music</li>
             <li class="nav-item"><a href="info.html">info</a></li>
         </ul>
     </nav>
+
+
+
     <div class="container">
+
+        <section id="records" style="max-height:0px">
+            <!-- <h1>records</h1> -->
+            <div>
+            <a href="tarantula--poesie-culture/">
+                <img src="tarantula--poesie-culture/tarantula-poesieCulture-cover.jpg">
+            <h5>Tarantula - Poesie Culture (2022)</h5>
+        </a>
+        </div>
+        </section>
 
     <figure id="ideas-list">
         <img src='media/amillionthoughts-oneis.png' 
@@ -43,15 +57,7 @@
         </div>
     </div>
     
-    <section id="records">
-        <!-- <h1>records</h1> -->
-        <div>
-        <a href="tarantula--poesie-culture/">
-            <img src="tarantula--poesie-culture/tarantula-poesieCulture-coverGrab.jpg">
-        <h5>Tarantula - Poesie Culture</h5>
-    </a>
-    </div>
-    </section>
+<p>a million thoughts</p>
 
 </div>
 
@@ -182,6 +188,20 @@ function randomColour(){
 
 
 binaryGenerator();
+
+
+document.getElementById('toggle-records').onclick = ()=>{
+    var recordsEl = document.getElementById('records');
+    var toggleEl = document.getElementById('toggle-records');
+    if(toggleEl.classList.contains('active')){
+        toggleEl.classList.remove('active');
+        recordsEl.style.maxHeight='0px';
+    }else{
+        recordsEl.style.maxHeight='500px';
+        toggleEl.classList.add('active');
+    }
+
+}
 
     </script>
 
