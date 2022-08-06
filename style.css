@@ -45,6 +45,7 @@ img {
 
 #main-nav .nav-item:not(.active){
     border:1px dotted black;
+
 }
 
 #main-nav .nav-item.active a{
@@ -59,6 +60,7 @@ img {
 }
 #main-nav .nav-item:not(.active):hover{
     filter:invert(1);
+    transform: scaleY(-1);
 }
 
 #infinite-idea{
