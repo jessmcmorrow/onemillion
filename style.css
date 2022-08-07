@@ -41,7 +41,6 @@ img {
     justify-content: center;
     align-items: center;
     background:white;
-    padding:5px;
 }
 
 #main-nav .nav-item:not(.active){
