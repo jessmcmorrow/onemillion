@@ -27,7 +27,6 @@ function initModal(){
         document.getElementById('audio-player').onended = ()=>{
             if(i!=arr.length-1){
                 arr[i+1].click();
-              //  document.getElementById('audio-player').play();
             }
         }
     }
@@ -140,10 +139,8 @@ var toggleRecordsEl = document.getElementById('toggle-records');
 if(toggleRecordsEl.classList.contains('active')){
 toggleRecordsEl.classList.remove('active');
 recordsEl.style.maxHeight='0px';
-//  recordsEl.style.maxWidth='0px';
 }else{
 recordsEl.style.maxHeight='500px';
-//   recordsEl.style.maxWidth='1000px';
 toggleRecordsEl.classList.add('active');
 }
 }
