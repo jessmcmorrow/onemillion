@@ -102,6 +102,14 @@ section#gallery{
 
 }
 
+section#gallery img{
+    transition: rotate .5s;
+}
+
+section#gallery img:hover{
+    rotate:0deg !important;
+}
+
 section#records div {
     width:100%;
     text-align: center;
