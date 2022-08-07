@@ -56,6 +56,7 @@ fetch('gallery.html')
 var imgs = [].slice.call(document.querySelectorAll('img[data-lazy-img-src]'));
 imgs.forEach(function (x) {
     x.style.filter = "blur(2px) invert(1)";
+    x.style.rotate = `${Math.random()>0.5?"-":""}${Math.random()*45}deg`;
     var lazyImageObserver = new IntersectionObserver(function (entries, observer) {
         entries.forEach(function (entry) {
             if (entry.isIntersecting) {
