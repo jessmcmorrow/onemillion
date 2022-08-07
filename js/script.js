@@ -152,7 +152,7 @@ window.onscroll = (ev)=> {
 if (window.pageYOffset == 0 && !document.getElementById('toggle-records').classList.contains('active')) { 
 document.getElementById('toggle-records').click() 
 }
-if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight && !document.getElementById('toggle-gallery').classList.contains('active')) {
 document.getElementById('toggle-gallery').click();
 } 
 }
@@ -163,10 +163,8 @@ var toggleGalleryEl = document.getElementById('toggle-gallery');
 if(toggleGalleryEl.classList.contains('active')){
 toggleGalleryEl.classList.remove('active');
 galleryEl.style.maxHeight='0px';
-//  recordsEl.style.maxWidth='0px';
 }else{
 galleryEl.style.maxHeight='10000px';
-//   recordsEl.style.maxWidth='1000px';
 toggleGalleryEl.classList.add('active');
 }
 }
