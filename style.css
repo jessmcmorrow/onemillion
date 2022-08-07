@@ -28,9 +28,6 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* top: 0px;
-    left:0px; */
-    /*! background:rgba(0,0,0,0.5); */
     width:100%;
     z-index: 10;
     border-top:1px dotted white;
@@ -41,6 +38,7 @@ img {
     justify-content: center;
     align-items: center;
     background:white;
+    padding:5px;
 }
 
 #main-nav .nav-item:not(.active){
@@ -90,13 +88,18 @@ section#records {
 display: flex;
 flex-flow: row wrap;
 justify-content: space-around;
-overflow-x: hidden;
 margin-bottom: 30px;
 transition: max-height 1s;
 overflow:hidden;
 border-color: black;
 border-style: dotted;
 border-width: 1px 0px;
+}
+
+section#gallery{
+    overflow:hidden;
+    transition: max-height 1s;
+
 }
 
 section#records div {
@@ -151,10 +154,6 @@ div.fader div:first-child {
 div.fader img {
     width:100%;
 }
-
-/* #ideas-list{
-    filter: drop-shadow(30px 10px 4px #4444dd);
-} */
 
 div#background-fader div{
     position:fixed;
