@@ -12,19 +12,21 @@
 </head>
 <body>
 
-    <nav aria-labelledby='mainmenulabel' id='main-nav'>
-        <ul>
-            <li class="nav-item active"><a href="index.html">a million thoughts</a></li>
-            <li class="nav-item" id="toggle-records">music</li>
-            <li class="nav-item"><a href="info.html">info</a></li>
-        </ul>
-    </nav>
+
 
 
 
     <div class="container">
 
-        <section id="records" style="max-height:0px">
+        <nav aria-labelledby='mainmenulabel' id='main-nav'>
+            <ul>
+                <li class="nav-item active"><a href="index.html">a million thoughts</a></li>
+                <li class="nav-item" id="toggle-records">music</li>
+                <li class="nav-item"><a href="info.html">info</a></li>
+            </ul>
+        </nav>
+
+        <section id="records" style="max-height:0px;">
             <!-- <h1>records</h1> -->
             <div>
             <a href="tarantula--poesie-culture/">
@@ -132,8 +134,12 @@ binaryGenerateInterval = setInterval(function(){
 // }
 
 window.onload = ()=>{
-    document.getElementById("ideas-list").style.filter = `drop-shadow(${Math.round(Math.random()*30)}px ${Math.round(Math.random()*10)}px ${Math.round(Math.random()*4)}px ${rgba2hex(randomColour())})`
+    document.getElementById("ideas-list").style.filter = `drop-shadow(${Math.round(Math.random()*30)}px ${Math.round(Math.random()*10)}px ${Math.round(Math.random()*4)}px ${backgroundColor})`
+    document.body.style.backgroundColor = backgroundColor;
+    document.getElementById('records').style.borderColor = backgroundColor;
 }
+
+var backgroundColor =  rgba2hex(randomColour());
 
 function binaryGenerate(){
 var newImg = document.createElement('img');
@@ -171,7 +177,7 @@ existingImgs[randomImgIndex].style.backgroundColor = `${randomColour()}`;
 
 existingImgs.forEach((x,i)=>{
     if(((i+1)%17==0)){
-        x.style.backgroundColor = 'white';
+        x.style.backgroundColor = backgroundColor;
     }
 })
 
@@ -196,8 +202,10 @@ document.getElementById('toggle-records').onclick = ()=>{
     if(toggleEl.classList.contains('active')){
         toggleEl.classList.remove('active');
         recordsEl.style.maxHeight='0px';
+      //  recordsEl.style.maxWidth='0px';
     }else{
         recordsEl.style.maxHeight='500px';
+     //   recordsEl.style.maxWidth='1000px';
         toggleEl.classList.add('active');
     }
 
