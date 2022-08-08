@@ -4,7 +4,7 @@
   }
 
 body {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family:cursive;
 }
 
 div.container {
@@ -33,15 +33,18 @@ img {
     border-top:1px dotted white;
 }
 
+#main-nav ul {
+padding:0px;
+}
+
 #main-nav .nav-item {
     display: inline-block;
     justify-content: center;
     align-items: center;
-    background:white;
     padding:5px;
 }
 
-#main-nav .nav-item:not(.active){
+#main-nav .nav-item:not(:first-child){
     border:1px dotted black;
     cursor:pointer;
     font-style: normal;
@@ -57,12 +60,8 @@ img {
     color: black;
     text-decoration:none;
 }
-#main-nav .nav-item {
-    font-style:italic;
-}
 
-#main-nav .nav-item:not(.active):hover{
-    filter:invert(1);
+#main-nav .nav-item:not(.active):hover, #main-nav .nav-item.active:not(:first-child){
     transform: scaleY(-1);
 }
 
@@ -103,11 +102,17 @@ section#gallery{
 }
 
 section#gallery img{
-    transition: rotate .5s;
+    transition: all .1s;
+    position:relative;
+    opacity:0.9;
+    margin-top:20px;
 }
 
 section#gallery img:hover{
     rotate:0deg !important;
+    transform: scale(2);
+    z-index:99;
+    opacity:1;
 }
 
 section#records div {
@@ -214,7 +219,12 @@ div#background-fader div:last-child{
     background:yellow;
     width: fit-content;
     margin: 0px auto 5px;
-    padding:5px;
+    padding: 5px;
+}
+
+#tracks li:before{
+    content: '\1F3BC';
+    background: white;
 }
 
 #tracks li:hover, #tracks li.active, audio{

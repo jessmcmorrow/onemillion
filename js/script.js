@@ -115,7 +115,7 @@ existingImgs[randomImgIndex].style.backgroundColor = `${randomColour()}`;
 
 existingImgs.forEach((x,i)=>{
 if(((i+1)%17==0)){
-x.style.backgroundColor = backgroundColor;
+x.style.backgroundColor = 'inherit';
 }
 })
 
