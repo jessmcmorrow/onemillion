@@ -6,44 +6,88 @@
 </head>
 
 <body>
-  <p id="link-home"><a href="/">a million thoughts</a></p>
-<h1>tarantula - poesie culture</h1>
-<img src="/tarantula--poesie-culture/tarantula-poesieCulture-cover.jpg" alt="tarantula - poesie culture cover art" title="by D&eacute;as McMorrow"/>
-<p>Someone told me diamonds aren't worth anything as soon as someone buys them... they don't retain any commodity value. But that's not right; diamonds are worth the exact same to every sane person with a healthy mind and a good set of eyes. If money is what you care about, this release has never been worth anything, and in that sense it's like a diamond someone bought before it was formed. But to the right person, to the well adjusted individual, this release shines perfect, like God's favourite gem... Buy it now and receive IS THIS IT bracelet art designed and made by Sephi Lock. Glows in the dark like the star link satellite. Cover art by D&eacute;as McMorrow.</p>
+    <p id="link-home"><a href="/">a million thoughts</a></p>
+    <h1>tarantula - poesie culture</h1>
+    <img src="/tarantula--poesie-culture/tarantula-poesieCulture-cover.jpg" alt="tarantula - poesie culture cover art" title="by D&eacute;as McMorrow" />
+    <p>Someone told me diamonds aren't worth anything as soon as someone buys them... they don't retain any commodity value. But that's not right; diamonds are worth the exact same to every sane person with a healthy mind and a good set of eyes. If money is what you care about, this release has never been worth anything, and in that sense it's like a diamond someone bought before it was formed. But to the right person, to the well adjusted individual, this release shines perfect, like God's favourite gem... Buy it now and receive IS THIS IT bracelet art designed and made by Sephi Lock. Glows in the dark like the star link satellite. Cover art by D&eacute;as McMorrow.</p>
 
-<div id="tracks">
-  <h5>A</h5>
-  <ul>
-<li data-track="/tarantula--poesie-culture/tarantula--poesie-culture--1--deglaciation.mp3">deglaciation</li>
-<li data-track="/tarantula--poesie-culture/tarantula--poesie-culture--2--cigarettes.mp3">cigarettes</li>
-  </ul>
+    <div id="tracks">
+        <h5>A</h5>
+        <ul>
+            <li data-track="/tarantula--poesie-culture/tarantula--poesie-culture--1--deglaciation.mp3">deglaciation</li>
+            <li data-track="/tarantula--poesie-culture/tarantula--poesie-culture--2--cigarettes.mp3">cigarettes</li>
+        </ul>
 
-  <h5>B</h5>
-  <ul>
-    <li data-track="/tarantula--poesie-culture/tarantula--poesie-culture--3--felix.mp3">felix</li>
-    <li data-track="/tarantula--poesie-culture/tarantula--poesie-culture--4--wild-flowers.mp3">wild flowers</li>
-    <li data-track="/tarantula--poesie-culture/tarantula--poesie-culture--5--pee-after-sex.mp3">pee after sex</li>
-</ul>
-</div>
-<p><em>recorded live in <a href="https://www.greendoorstudio.org.uk/" target="_blank">Green Door Studio</a>, Glasgow 2022 by Ronan Fay</em></p>
+        <h5>B</h5>
+        <ul>
+            <li data-track="/tarantula--poesie-culture/tarantula--poesie-culture--3--felix.mp3">felix</li>
+            <li data-track="/tarantula--poesie-culture/tarantula--poesie-culture--4--wild-flowers.mp3">wild flowers</li>
+            <li data-track="/tarantula--poesie-culture/tarantula--poesie-culture--5--pee-after-sex.mp3">pee after sex</li>
+        </ul>
+    </div>
+    <p><em>recorded live in <a href="https://www.greendoorstudio.org.uk/" target="_blank">Green Door Studio</a>, Glasgow 2022 by Ronan Fay</em></p>
+    <audio controls id="audio-player" style="opacity:0">
+        <source src="/tarantula--poesie-culture/tarantula--poesie-culture--1--deglaciation.mp3" type="audio/mpeg" id="audio-source">
+        Your browser does not support the audio element.
+    </audio>
+    <div>
+        <img src="/tarantula--poesie-culture/tarantula-bracelet-bag.jpg" alt="Is This It bracelet next to a shiny bag and other jewels" />
+        <img src="/tarantula--poesie-culture/tarantula-bracelet-hand.jpg" alt="Is This It bracelet being modelled on a hand next to a sink" />
+    </div>
 
-<audio controls id="audio-player" style="opacity:0">
-    <source src="/tarantula--poesie-culture/tarantula--poesie-culture--1--deglaciation.mp3" type="audio/mpeg" id="audio-source">
-  Your browser does not support the audio element.
-  </audio>
+    <p><a href="https://itsticks.github.io/tarantula">tarantula band website</a></p>
 
+    <div id="smart-button-container">
+        <div style="text-align: center;">
+            <div id="paypal-button-container"></div>
+        </div>
+    </div>
+    <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=GBP" data-sdk-integration-source="button-factory"></script>
+    <script>
+        function initPayPalButton() {
+            paypal.Buttons({
+                style: {
+                    shape: 'pill',
+                    color: 'black',
+                    layout: 'horizontal',
+                    label: 'paypal',
 
-  <div>
-    <img src="/tarantula--poesie-culture/tarantula-bracelet-bag.jpg" alt="Is This It bracelet next to a shiny bag and other jewels"/>
-    <img src="/tarantula--poesie-culture/tarantula-bracelet-hand.jpg" alt="Is This It bracelet being modelled on a hand next to a sink"/>
-  </div>
+                },
 
-  <p><a href="https://itsticks.github.io/tarantula">tarantula band website</a></p>
+                createOrder: function (data, actions) {
+                    return actions.order.create({
+                        purchase_units: [{ "description": "cyber release and bracelet art", "amount": { "currency_code": "GBP", "value": 4 } }]
+                    });
+                },
 
-  <script src="/js/script.js"></script>
-  <script>
-    initAudio()
-  </script>
+                onApprove: function (data, actions) {
+                    return actions.order.capture().then(function (orderData) {
+
+                        // Full available details
+                        console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+
+                        // Show a success message within this page, e.g.
+                        const element = document.getElementById('paypal-button-container');
+                        element.innerHTML = '';
+                        element.innerHTML = '<h3>Thank you for your payment!</h3>';
+
+                        // Or go to another URL:  actions.redirect('thank_you.html');
+
+                    });
+                },
+
+                onError: function (err) {
+                    console.log(err);
+                }
+            }).render('#paypal-button-container');
+        }
+        initPayPalButton();
+    </script>
+
+    <script src="/js/script.js"></script>
+    <script>
+        initAudio()
+    </script>
 </body>
 
 </html>
