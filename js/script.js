@@ -32,7 +32,7 @@ function homepage(){
 document.getElementById('close-record-modal').onclick = ()=>{
     document.getElementById('record-modal').style.display = 'none';
     document.body.style.overflowY='scroll';
-    window.history.pushState("", "", "");
+    window.history.pushState("", "", "/");
 }
 
 

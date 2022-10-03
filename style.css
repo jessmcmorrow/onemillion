@@ -95,6 +95,23 @@ border-style: dotted;
 border-width: 1px 0px;
 }
 
+div.release-gallery {
+    display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+}
+
+div.release-gallery img {
+    max-width:100%;
+    width:600px;
+}
+
+section#records div img{
+    background-image: url('/media/static/stripe-animation.gif');
+    background-color: hotpink;
+    padding:2px;
+}
+
 section#gallery{
     overflow:hidden;
     transition: max-height 1s;
